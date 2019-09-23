@@ -1,0 +1,24 @@
+import random
+target = random.randomint(1,100)
+
+guesses = [0]
+
+while True:
+    b = input("Guess one number between 1 and 100 : )
+    if b > 100 or b < 0:
+        print("Your guess should be between 1 and 100\n")
+        continue:
+    else:
+        guesses.append(b)
+
+    if target == guesses[-1]: 
+        print("You got it. The target number is :" + str(target))
+        break
+    elif guesses[-2] == 0 and abs(target-guesses[-1]) <= 10:
+        print("WARM!n")
+    elif guesses[-2] == 0 and abs(target-guesses[-1]) > 10:
+        print("COLD!n")
+    elif guesses[-2] != 0 and abs(target-guesses[-1]) < abs(target-guesses[-2]):
+        print("WARMER!n")      
+    elif guesses[-2] != 0 and abs(target-guesses[-1]) > abs(target-guesses[-2]):
+        print("COLDER!n")   
