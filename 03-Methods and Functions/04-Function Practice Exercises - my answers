@@ -1,0 +1,17 @@
+
+
+def summer_69(arr):
+    sum = 0
+    flag = 0
+    
+    for num in arr:
+        if flag == 0 and num != 6: 
+            sum += num
+        elif flag == 0 and num ==6:
+            flag = 1
+        elif flag == 1 and num !=9:
+            continue
+        elif flag == 1 and num ==9:
+            flag = 0
+    
+    return sum
